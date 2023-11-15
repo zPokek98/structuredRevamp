@@ -11,6 +11,9 @@
 		5436A5862B03D49100D202E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A5852B03D49100D202E5 /* ContentView.swift */; };
 		5436A5882B03D49200D202E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5436A5872B03D49200D202E5 /* Assets.xcassets */; };
 		5436A58B2B03D49200D202E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5436A58A2B03D49200D202E5 /* Preview Assets.xcassets */; };
+		5436A5932B03D9C500D202E5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A5922B03D9C500D202E5 /* Utils.swift */; };
+		54575FC12B04464800A9BA11 /* DataPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54575FC02B04464800A9BA11 /* DataPickerView.swift */; };
+		54575FC42B0458E600A9BA11 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 54575FC32B0458E600A9BA11 /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		5436A5852B03D49100D202E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5436A5872B03D49200D202E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5436A58A2B03D49200D202E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5436A5922B03D9C500D202E5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		54575FC02B04464800A9BA11 /* DataPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54575FC42B0458E600A9BA11 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +57,10 @@
 		5436A5822B03D49100D202E5 /* structuredRevamp */ = {
 			isa = PBXGroup;
 			children = (
+				5436A5922B03D9C500D202E5 /* Utils.swift */,
 				5436A5832B03D49100D202E5 /* structuredRevampApp.swift */,
 				5436A5852B03D49100D202E5 /* ContentView.swift */,
+				5436A5912B03D7CA00D202E5 /* Views */,
 				5436A5872B03D49200D202E5 /* Assets.xcassets */,
 				5436A5892B03D49200D202E5 /* Preview Content */,
 			);
@@ -65,6 +73,14 @@
 				5436A58A2B03D49200D202E5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5436A5912B03D7CA00D202E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54575FC02B04464800A9BA11 /* DataPickerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = structuredRevamp;
+			packageProductDependencies = (
+				54575FC32B0458E600A9BA11 /* PopupView */,
+			);
 			productName = structuredRevamp;
 			productReference = 5436A5802B03D49100D202E5 /* structuredRevamp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 5436A5772B03D49100D202E5;
+			packageReferences = (
+				54575FC22B0458E600A9BA11 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 5436A5812B03D49100D202E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +161,8 @@
 			files = (
 				5436A5862B03D49100D202E5 /* ContentView.swift in Sources */,
 				5436A5842B03D49100D202E5 /* structuredRevampApp.swift in Sources */,
+				54575FC12B04464800A9BA11 /* DataPickerView.swift in Sources */,
+				5436A5932B03D9C500D202E5 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"structuredRevamp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Y3AUCBUM3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"structuredRevamp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4Y3AUCBUM3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54575FC22B0458E600A9BA11 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54575FC32B0458E600A9BA11 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54575FC22B0458E600A9BA11 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5436A5782B03D49100D202E5 /* Project object */;
 }
