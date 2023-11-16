@@ -15,11 +15,7 @@ struct ContentView: View {
     var body: some View {
         MainHeaderView(mainDate: $mainDate)
         ScrollingDaysView(mainDate: $mainDate)
-        Button(action: {
-            print(sortDatesInWeeks(dates: getDatesFromYear(date: mainDate)))
-        }, label: {
-            /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-        })
+            .padding(.top, -15)
         Spacer()
     }
 }

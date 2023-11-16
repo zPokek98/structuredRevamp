@@ -83,3 +83,21 @@ func sortDatesInWeeks(dates: [Date]) -> [[Date]]{
     
     return datesInWeeks
 }
+
+func getSelectedWeekNumber(sortedDate: [[Date]], date: Date) -> Int{
+    
+    var number: Int = 0
+    
+    for week in sortedDate{
+        for day in week{
+            if day.getDay() == date.getDay()
+            && day.getMonth() == date.getMonth()
+            && day.getYear() == date.getYear(){
+                return number
+            }
+        }
+        number+=1
+    }
+    
+    return number
+}

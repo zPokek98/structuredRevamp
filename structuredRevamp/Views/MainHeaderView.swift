@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainHeaderView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @Binding var mainDate: Date
     
     var monthName: String {
@@ -55,7 +57,7 @@ struct MainHeaderView: View {
                         .closeOnTap(false)
                         .closeOnTapOutside(true)
                         .dragToDismiss(true)
-                        .backgroundColor(.black.opacity(0.2))
+                        .backgroundColor(colorScheme == .light ? .black.opacity(0.2) : .white.opacity(0.2))
                 })
                 
                 Image(systemName: "gear")
