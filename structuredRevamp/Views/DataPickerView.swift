@@ -10,12 +10,13 @@ import SwiftUI
 struct DataPickerView: View {
     
     @Binding var selectedData: Date
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                 .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/4)
-                .foregroundStyle(.autoWBOpposite)
+                .foregroundStyle(Color.background)
                 .shadow(radius: 20)
     
             Text("Seleziona una data")

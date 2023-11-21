@@ -7,16 +7,33 @@
 
 import SwiftUI
 import PopupView
+import SwiftData
 
 struct ContentView: View {
     
-    @State var mainDate = Date()
+    @State var mainDate: Date = Date()
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        MainHeaderView(mainDate: $mainDate)
-        ScrollingDaysView(mainDate: $mainDate)
-            .padding(.top, -15)
-        Spacer()
+        ZStack{
+            Rectangle()
+                .ignoresSafeArea()
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
+                .foregroundStyle(Color.background)
+            
+            VStack{
+                MainHeaderView(mainDate: $mainDate)
+                
+                ScrollingDaysView(mainDate: $mainDate)
+                    .padding(.top, -20)
+                
+                Spacer()
+                    .foregroundStyle(Color(hue: 0.538, saturation: 0.205, brightness: 1.0))
+                
+                AddTaskView(mainDate: $mainDate)
+            }
+            .padding(.top, 40)
+        }
     }
 }
 

@@ -22,6 +22,8 @@ struct ScrollingDaysView: View {
     var startCounterDate = 0
     var endCounterDate = 7
     
+    @State var hapticFeedback = true
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader{ proxy in
@@ -29,14 +31,42 @@ struct ScrollingDaysView: View {
                     ForEach(sortedDates, id: \.self) { week in
                         HStack() {
                             ForEach(week, id: \.self) { day in
-                                Button(action: {}, label: {
-                                    VStack{
-                                        Text(day.getDayAbbreviation())
-                                            .padding(.bottom, 10)
-                                            .font(.subheadline)
-                                        Text("\(day.getDay())")
+                                Button(action: {
+                                    mainDate = day
+                                    hapticFeedback.toggle()
+                                }, label: {
+                                    if isSameDay(date1: mainDate, date2: day){
+                                        VStack{
+                                            Text(day.getDayAbbreviation())
+                                                .font(.footnote)
+                                                .foregroundStyle(.main)
+                                                .padding(.bottom, 10)
+                                                .offset(y:6)
+                                            Circle()
+                                                .overlay(content: {
+                                                    Text("\(day.getDay())")
+                                                        .foregroundStyle(.autoWB)
+                                                        .font(.headline)
+                                                        .bold()
+                                                })
+                                                .frame(width:35)
+                                                .foregroundStyle(.main)
+                                                .padding(.bottom, 0)
+                                        }
+                                    }else{
+                                        VStack{
+                                            Text(day.getDayAbbreviation())
+                                                .padding(.bottom, 10)
+                                                .font(.footnote)
+                                                .foregroundStyle(.gray)
+                                            Text("\(day.getDay())")
+                                                .foregroundStyle(.autoWB)
+                                                .font(.headline)
+                                                .bold()
+                                        }
                                     }
                                 })
+                                .sensoryFeedback(.selection, trigger: hapticFeedback)
                                 .padding(10)
                             }
                         }
@@ -49,27 +79,9 @@ struct ScrollingDaysView: View {
             }
         }
         .scrollTargetBehavior(.paging)
-        /*
-        TabView() {
-            ForEach(sortedDates, id: \.self) { week in
-                HStack {
-                    ForEach(week, id: \.self) { day in
-                        Button(action: {}, label: {
-                            VStack{
-                                Text(day.getDayAbbreviation())
-                                    .padding(.bottom, 10)
-                                Text("\(day.getDay())")
-                            }
-                        })
-                        .padding(10)
-                    }
-                }
-            }
-        }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .frame(height: 100)
-        .padding(-20)
-         */
+        .onAppear(perform: {
+            mainDate = Date()
+        })
     }
 }
 

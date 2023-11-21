@@ -19,52 +19,53 @@ struct MainHeaderView: View {
     var day: Int {
         mainDate.getDay()
     }
+    var year: String {
+        String(mainDate.getYear())
+    }
     
     @State var isPresentedDataPicker = false
     
     var body: some View {
-        VStack{
-            HStack{
-                Button(action: {
-                    mainDate = Date()
-                }, label: {
-                    Text("\(monthName)")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(.autoWB)
-                    Text("\(day)")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(.main)
-                })
-                .padding()
-                
-                Spacer()
-                
-                Button(action: {
-                    isPresentedDataPicker = true
-                }, label: {
-                    Image(systemName: "calendar")
-                        .foregroundStyle(.main)
-                        .font(.title)
-                }).popup(isPresented: $isPresentedDataPicker, view: {
-                    DataPickerView(selectedData: $mainDate)
-                }, customize: {
-                    $0
-                        .type(.toast)
-                        .isOpaque(true)
-                        .position(.top)
-                        .closeOnTap(false)
-                        .closeOnTapOutside(true)
-                        .dragToDismiss(true)
-                        .backgroundColor(colorScheme == .light ? .black.opacity(0.2) : .white.opacity(0.2))
-                })
-                
-                Image(systemName: "gear")
+        HStack{
+            Button(action: {
+                mainDate = Date()
+            }, label: {
+                Text("\(monthName)")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(.main)
+                Text("\(year)")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(.autoWB)
+            })
+            .padding()
+            
+            Spacer()
+            
+            Button(action: {
+                isPresentedDataPicker = true
+            }, label: {
+                Image(systemName: "calendar")
                     .foregroundStyle(.main)
                     .font(.title)
-                    .padding(.trailing)
-            }
+            }).popup(isPresented: $isPresentedDataPicker, view: {
+                DataPickerView(selectedData: $mainDate)
+            }, customize: {
+                $0
+                    .type(.toast)
+                    .isOpaque(true)
+                    .position(.top)
+                    .closeOnTap(false)
+                    .closeOnTapOutside(true)
+                    .dragToDismiss(true)
+                    .backgroundColor(colorScheme == .light ? .black.opacity(0.2) : .white.opacity(0.2))
+            })
+            
+            Image(systemName: "gear")
+                .foregroundStyle(.main)
+                .font(.title)
+                .padding(.trailing)
         }
     }
 }

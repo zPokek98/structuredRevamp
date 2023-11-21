@@ -90,9 +90,7 @@ func getSelectedWeekNumber(sortedDate: [[Date]], date: Date) -> Int{
     
     for week in sortedDate{
         for day in week{
-            if day.getDay() == date.getDay()
-            && day.getMonth() == date.getMonth()
-            && day.getYear() == date.getYear(){
+            if isSameDay(date1: date, date2: day){
                 return number
             }
         }
@@ -100,4 +98,15 @@ func getSelectedWeekNumber(sortedDate: [[Date]], date: Date) -> Int{
     }
     
     return number
+}
+
+func isSameDay(date1: Date, date2: Date) -> Bool{
+    
+    if date1.getDay() == date2.getDay()
+    && date1.getMonth() == date2.getMonth()
+    && date1.getYear() == date2.getYear(){
+        return true
+    }
+    
+    return false
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54178E582B0BBDB9004F5175 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54178E572B0BBDB9004F5175 /* AddTaskView.swift */; };
+		54178E5A2B0BBF1E004F5175 /* FormTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54178E592B0BBF1E004F5175 /* FormTaskView.swift */; };
+		54178E5D2B0CFCA2004F5175 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54178E5C2B0CFCA2004F5175 /* Task.swift */; };
+		54178E5F2B0D0827004F5175 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54178E5E2B0D0827004F5175 /* TaskListView.swift */; };
 		5436A5842B03D49100D202E5 /* structuredRevampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A5832B03D49100D202E5 /* structuredRevampApp.swift */; };
 		5436A5862B03D49100D202E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A5852B03D49100D202E5 /* ContentView.swift */; };
 		5436A5882B03D49200D202E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5436A5872B03D49200D202E5 /* Assets.xcassets */; };
@@ -14,12 +18,15 @@
 		5436A5932B03D9C500D202E5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A5922B03D9C500D202E5 /* Utils.swift */; };
 		54575FC12B04464800A9BA11 /* DataPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54575FC02B04464800A9BA11 /* DataPickerView.swift */; };
 		54575FC42B0458E600A9BA11 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 54575FC32B0458E600A9BA11 /* PopupView */; };
-		54E71F512B06CAE000B36B51 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E71F502B06CAE000B36B51 /* EnvironmentVariables.swift */; };
 		54FD56062B0513AA00537A9C /* ScrollingDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD56052B0513AA00537A9C /* ScrollingDaysView.swift */; };
 		54FD56082B05149200537A9C /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD56072B05149200537A9C /* MainHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54178E572B0BBDB9004F5175 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		54178E592B0BBF1E004F5175 /* FormTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTaskView.swift; sourceTree = "<group>"; };
+		54178E5C2B0CFCA2004F5175 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		54178E5E2B0D0827004F5175 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		5436A5802B03D49100D202E5 /* structuredRevamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = structuredRevamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5436A5832B03D49100D202E5 /* structuredRevampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structuredRevampApp.swift; sourceTree = "<group>"; };
 		5436A5852B03D49100D202E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,7 +34,6 @@
 		5436A58A2B03D49200D202E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5436A5922B03D9C500D202E5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		54575FC02B04464800A9BA11 /* DataPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerView.swift; sourceTree = "<group>"; };
-		54E71F502B06CAE000B36B51 /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 		54FD56052B0513AA00537A9C /* ScrollingDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingDaysView.swift; sourceTree = "<group>"; };
 		54FD56072B05149200537A9C /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54178E5B2B0CFC91004F5175 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54178E5C2B0CFCA2004F5175 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5436A5772B03D49100D202E5 = {
 			isa = PBXGroup;
 			children = (
@@ -63,9 +77,9 @@
 		5436A5822B03D49100D202E5 /* structuredRevamp */ = {
 			isa = PBXGroup;
 			children = (
+				54178E5B2B0CFC91004F5175 /* Model */,
 				5436A5922B03D9C500D202E5 /* Utils.swift */,
 				5436A5832B03D49100D202E5 /* structuredRevampApp.swift */,
-				54E71F502B06CAE000B36B51 /* EnvironmentVariables.swift */,
 				5436A5852B03D49100D202E5 /* ContentView.swift */,
 				5436A5912B03D7CA00D202E5 /* Views */,
 				5436A5872B03D49200D202E5 /* Assets.xcassets */,
@@ -86,8 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				54575FC02B04464800A9BA11 /* DataPickerView.swift */,
+				54178E5E2B0D0827004F5175 /* TaskListView.swift */,
 				54FD56052B0513AA00537A9C /* ScrollingDaysView.swift */,
 				54FD56072B05149200537A9C /* MainHeaderView.swift */,
+				54178E572B0BBDB9004F5175 /* AddTaskView.swift */,
+				54178E592B0BBF1E004F5175 /* FormTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,12 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				54FD56062B0513AA00537A9C /* ScrollingDaysView.swift in Sources */,
+				54178E582B0BBDB9004F5175 /* AddTaskView.swift in Sources */,
 				5436A5862B03D49100D202E5 /* ContentView.swift in Sources */,
 				5436A5842B03D49100D202E5 /* structuredRevampApp.swift in Sources */,
 				54575FC12B04464800A9BA11 /* DataPickerView.swift in Sources */,
 				54FD56082B05149200537A9C /* MainHeaderView.swift in Sources */,
 				5436A5932B03D9C500D202E5 /* Utils.swift in Sources */,
-				54E71F512B06CAE000B36B51 /* EnvironmentVariables.swift in Sources */,
+				54178E5F2B0D0827004F5175 /* TaskListView.swift in Sources */,
+				54178E5D2B0CFCA2004F5175 /* Task.swift in Sources */,
+				54178E5A2B0BBF1E004F5175 /* FormTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
