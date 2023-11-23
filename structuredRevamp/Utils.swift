@@ -41,6 +41,19 @@ extension Date {
     public func advanced(by n: TimeInterval) -> Date {
         return self + n
     }
+    public func getHour() -> String {
+        return String(Calendar.current.component(.hour, from: self))
+    }
+    public func getMinute() -> String {
+        var min = String(Calendar.current.component(.minute, from: self))
+        var newmin: String
+        if min.count == 1 {
+            newmin = "0"+min
+        }else{
+            newmin = min
+        }
+        return newmin
+    }
 }
 
 extension UIScreen{
@@ -109,4 +122,8 @@ func isSameDay(date1: Date, date2: Date) -> Bool{
     }
     
     return false
+}
+
+func addMinutesToDate(date: Date, minutes: Int) -> Date{
+    return Calendar.current.date(byAdding: .minute, value: minutes, to: date) ?? Date()
 }

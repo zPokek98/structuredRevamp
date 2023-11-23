@@ -28,6 +28,8 @@ struct FormTaskView: View {
     @State var duration: Int = 15
     @State var priority: Priority = Priority.low
     @State var flagColor: Color = .yellow
+    @Environment(\.modelContext) var modelContext
+    @State var isShowingAlert: Bool = false
     
     var body: some View {
         
@@ -41,7 +43,7 @@ struct FormTaskView: View {
                     TextField("* Task description", text: $taskDesc)
                     TextField("Notes", text: $notes)
                 }
-
+                
                 Section("Time"){
                     HStack{
                         Image(systemName: "calendar")
@@ -102,9 +104,8 @@ struct FormTaskView: View {
                             }
                         })
                     }
-
+                    
                 }
-                
             }
             .navigationTitle("Create Task")
             .toolbar(){
@@ -114,6 +115,30 @@ struct FormTaskView: View {
                     }, label: {
                         Text("Cancel")
                     })
+                    .padding(.trailing, 250)
+                    Spacer()
+                    Button(action: {
+                        if !self.taskName.isEmpty
+                            && !self.taskDesc.isEmpty{
+                            modelContext.insert(Task(taskName: self.taskName, taskDesc: self.taskDesc, notes: self.notes, iconName: self.iconName, date: self.date, duration: self.duration))
+                            isShowingFormTaskView = false
+                        }else{
+                            isShowingAlert = true
+                        }
+                    }, label: {
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .frame(width: 50, height: 35)
+                            .scaledToFit()
+                            .overlay(content: {
+                                Text("Add")
+                                    .foregroundStyle(.autoWBOpposite)
+                            })
+                        
+                    })
+                    .alert(isPresented: $isShowingAlert) {
+                        Alert(title: Text("Attention!"), message: Text("The task name and the task description are necessary"), dismissButton: .default(Text("Got it!")))
+                    }
+                    .padding(.trailing, 10)
                 }
             }
         }
